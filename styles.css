@@ -1,0 +1,46 @@
+/* Styles for the container */
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Make the slideshow container fill the entire screen */
+.slideshow-container {
+    position: fixed; /* Keep it fixed on the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure that the videos are in the background */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Make each video fill the screen */
+.mySlides {
+    position: absolute; /* Position the video in absolute terms */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire screen without distorting */
+    display: none; /* Hide videos initially */
+}
+
+/* Button Styles */
+#get-started-button {
+    position: absolute;
+    top: 50%;  /* Center the button vertically */
+    left: 50%;  /* Center the button horizontally */
+    transform: translate(-50%, -50%); /* Fine-tune centering */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1; /* Ensure the button stays on top of the videos */
+}
+
+#get-started-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);  /* Darker background when hovered */
+}
