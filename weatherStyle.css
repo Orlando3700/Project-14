@@ -33,6 +33,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 10px; /* Space between the input and button */
+    flex-wrap: wrap; /* Allow elements to stack on smaller screens */
 }
 
 /* Input Field Styling */
@@ -41,8 +42,8 @@ h1 {
     font-size: 1.2rem;
     border: 2px solid #4682B4; /* Steel Blue */
     border-radius: 5px;
-    width: 250px;
-    max-width: 100%;
+    width: 100%; /* Make the input field responsive */
+    max-width: 250px; /* Set a max width for large screens */
     transition: border-color 0.3s ease;
 }
 
@@ -83,5 +84,44 @@ button:focus {
 .container, .input-container {
     margin-bottom: 20px;
 }
+
+/* Make the page more responsive on smaller screens */
+@media (max-width: 768px) {
+    /* Adjust font size for headings */
+    h1 {
+        font-size: 2rem; /* Smaller font for mobile */
+    }
+
+    /* Adjust input width */
+    #cityInput {
+        max-width: 100%; /* Allow the input field to take full width */
+    }
+
+    /* Adjust button padding */
+    button {
+        font-size: 1rem; /* Smaller button text */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    h1 {
+        font-size: 1.5rem; /* Even smaller title font */
+    }
+
+    /* Input field styling for mobile */
+    #cityInput {
+        padding: 8px;
+        font-size: 1rem; /* Adjust input font size */
+    }
+
+    /* Button styling for mobile */
+    button {
+        font-size: 0.9rem; /* Smaller button text */
+        padding: 6px 12px; /* Adjust button padding */
+    }
+}
+
 
 
