@@ -1,15 +1,18 @@
+//App.js
+
 // Replace with your actual OpenWeatherMap API key
 var apiKey = "dcf1d0a077126ba4cc7925ac2dcd5132";  
 
 function getWeather() {
     var city = document.getElementById("cityInput").value;
+	var country = document.getElementById("countryInput").value;
 
     // Check if the city input is empty
-    if (!city) {
-        alert("Please enter a city name.");
+    if (!city || !country) {
+        alert("Please enter both a city name and a country code.");
         return;
     }
-
+	
     // URL for OpenWeatherMap API with city name and API key
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -18,7 +21,7 @@ function getWeather() {
         .then(response => response.json())
         .then(data => {
             if (data.cod === "404") {
-                alert("City not found. Please check the city name.");
+                alert("City not found. Please check the city and country.");
             } else {
                 // Redirect to weather.html and pass weather data as query parameters
                 var weatherData = encodeURIComponent(JSON.stringify(data));
@@ -30,4 +33,5 @@ function getWeather() {
             alert("An error occurred while fetching the weather data.");
         });
 }
+
 

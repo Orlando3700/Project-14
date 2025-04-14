@@ -1,3 +1,5 @@
+//weatherData.js
+
 window.onload = function() {
     // Get the query parameter containing the weather data
     var urlParameters = new URLSearchParams(window.location.search);
